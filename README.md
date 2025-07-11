@@ -20,6 +20,7 @@ Class: com.camilo.FraudDetect
 ### 🧠 Tarjan Algorithm
 Class: com.camilo.TarjanExampleMain
 - On this class I'm exploring the behaviour of a Tarjan Algorithm, which is quite common used when you want to find all Strongly Connected Components(SCCs) in a directed graph. It operates in linear time O(v + E) using Depth-First Search.
+- You can some representation about SCCs at file [tarjan.sccs.puml](docs/tarjan.sccs.puml), please copy/past in the site: https://www.plantuml.com/plantuml/
 
 ---
 

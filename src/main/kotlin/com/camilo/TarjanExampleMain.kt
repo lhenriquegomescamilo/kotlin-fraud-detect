@@ -1,8 +1,8 @@
 package com.camilo
 
 
-data class Graph(val vertices: Int) {
-    val adjacentList: Array<MutableList<Int>> = Array(vertices) { mutableListOf<Int>() }
+data class Graph(val numberOfNodes: Int) {
+    val adjacentList = Array(numberOfNodes) { mutableListOf<Int>() }
 
     fun addEdge(from: Int, to: Int) {
         adjacentList[from].add(to)
@@ -13,14 +13,14 @@ data class Graph(val vertices: Int) {
 class TarjanSCC(private val graph: Graph) {
 
     private var index = 0
-    private var indices = IntArray(graph.vertices) { -1 }
-    private val lowLinks = IntArray(graph.vertices) { -1 }
-    private val onStack = BooleanArray(graph.vertices) { false }
+    private var indices = IntArray(graph.numberOfNodes) { -1 }
+    private val lowLinks = IntArray(graph.numberOfNodes) { -1 }
+    private val onStack = BooleanArray(graph.numberOfNodes) { false }
     private val stack = ArrayDeque<Int>()
     private val result = mutableListOf<List<Int>>()
 
     fun findSCSS(): List<List<Int>> {
-        for (v in 0 until graph.vertices) {
+        for (v in 0 until graph.numberOfNodes) {
             if(indices[v] == -1) strongConnect(v)
 
         }

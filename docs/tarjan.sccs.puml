@@ -1,0 +1,27 @@
+@startuml
+digraph G {
+    rankdir=LR
+    node [shape=circle, style=filled, fillcolor=lightgrey]
+
+    // Grouping by logical level
+    { rank = same; 0 }
+    { rank = same; 1 5 }
+    { rank = same; 2 }
+    { rank = same; 3 6 }
+    { rank = same; 4 }
+
+    // Main path
+    0 -> 1
+    1 -> 2
+    2 -> 3
+    3 -> 4
+    4 -> 3  // Cycle between 3 and 4
+
+    // Branches and cycles
+    1 -> 5
+    2 -> 5
+    5 -> 0  // Cycle back to 0
+    5 -> 6
+    6 -> 5  // Cycle between 5 and 6
+}
+@enduml
